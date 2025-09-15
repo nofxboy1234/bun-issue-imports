@@ -1,5 +1,6 @@
 import { serve } from "bun";
 import index from "./index.html";
+import { todos } from "@/todos";
 
 const server = serve({
   routes: {
@@ -8,6 +9,8 @@ const server = serve({
 
     "/api/hello": {
       async GET(req) {
+        // console.log(todos);
+
         return Response.json({
           message: "Hello, world!",
           method: "GET",
@@ -21,7 +24,7 @@ const server = serve({
       },
     },
 
-    "/api/hello/:name": async req => {
+    "/api/hello/:name": async (req) => {
       const name = req.params.name;
       return Response.json({
         message: `Hello, ${name}!`,

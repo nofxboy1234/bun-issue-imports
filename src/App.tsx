@@ -4,7 +4,11 @@ import "./index.css";
 import logo from "./logo.svg";
 import reactLogo from "./react.svg";
 
+import { todos } from "@/todos";
+
 export function App() {
+  // console.log(todos);
+
   return (
     <div className="app">
       <div className="logo-container">
