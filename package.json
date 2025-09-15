@@ -7,8 +7,8 @@
     "dev": "bun --hot src/index.tsx",
     "start": "NODE_ENV=production bun src/index.tsx",
     "clean": "rm -rf dist && echo 'Done cleaning.'",
-    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
-    "preview": "bun run build && bun src/preview.ts"
+    "build": "bun clean && bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
+    "preview": "bun clean && bun run build && bun src/preview.ts"
   },
   "dependencies": {
     "react": "^19",
